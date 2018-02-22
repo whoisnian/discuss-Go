@@ -1,0 +1,109 @@
+{{template "header"}}
+<div class="menu">
+  <a class="menu-title" href="/">留言板</a>
+  <nav class="menu-option">
+    {{if .Username}}
+    <a href="">{{.Username}}</a>
+    <a href="/logout/">注销</a>
+    {{else}}
+    <a href="/login/">登录</a>
+    <a href="/signup/">注册</a>
+    {{end}}
+  </nav>
+</div>
+<form class="form-card" action="/" method="post">
+  {{if .Error}}<span class="error">{{.Error}}</span>{{end}}<br/><br/>
+  <textarea class="textarea" name="content" rows="5" maxlength="1500" value="{{.EditMessage}}"></textarea><br/><br/>
+  <label class="button">发表
+    <input style="display:none" type="submit" name="submit" value="发表">
+  </label>
+</form>
+<br/>
+<table class="pages">
+  <tr>
+    <td colspan="3">
+{{if gt .PageNum 1}}
+      <a href="/?p={{add .PageNum -1}}">上一页</a>
+{{else}}
+      <span class="inactive">上一页</span>
+{{end}}
+    </td>
+{{$n := .PageNum}}
+{{$p := pages .PageNum .SumNum}}
+
+{{range $p}}
+{{if eq . $n}}
+    <td>
+      <span class="active">{{.}}</span>
+    </td>
+{{else}}
+    <td>
+      <a href="/?p={{.}}">{{.}}</a>
+    </td>
+{{end}}
+{{end}}
+
+    <td colspan="3">
+{{if lt .PageNum .SumNum}}
+      <a href="/?p={{add .PageNum 1}}">下一页</a>
+{{else}}
+      <span class="inactive">下一页</span>
+{{end}}
+    </td>
+  </tr>
+</table>
+<br/>
+
+<div class="message">
+  <hr/>
+{{range .Messages}}
+  <span class="message-user">{{.Username}}</span>
+  <p class="message-content">
+{{$c := br .Content}}
+{{range $c}}{{.}}<br/>{{end}}
+  </p><br/>
+  <span class="message-time">{{.Time}}</span>
+  <br/>
+<hr/>
+{{end}}
+</div>
+
+<br/>
+<table class="pages">
+  <tr>
+    <td colspan="3">
+{{if gt .PageNum 1}}
+      <a href="/?p={{add .PageNum -1}}">上一页</a>
+{{else}}
+      <span class="inactive">上一页</span>
+{{end}}
+    </td>
+{{$n := .PageNum}}
+{{$p := pages .PageNum .SumNum}}
+
+{{range $p}}
+{{if eq . $n}}
+    <td>
+      <span class="active">{{.}}</span>
+    </td>
+{{else}}
+<label>
+    <td>
+      <a href="/?p={{.}}">{{.}}</a>
+    </td>
+    </label>
+{{end}}
+{{end}}
+
+    <td colspan="3">
+{{if lt .PageNum .SumNum}}
+      <a href="/?p={{add .PageNum 1}}">下一页</a>
+{{else}}
+      <span class="inactive">下一页</span>
+{{end}}
+    </td>
+  </tr>
+</table>
+<br/>
+
+{{template "footer"}}

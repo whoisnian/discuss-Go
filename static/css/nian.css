@@ -1,0 +1,252 @@
+/*
+ * Author: nian
+ * Blog: http://whoisnian.com
+ * Mail: zhuchangbao2017@gmail.com
+ * Copyright © 2018 All Rights Reserved
+ */
+
+/*********** main ***********/
+html, body {
+    font-family: "PT Sans", Helvetica, Arial, sans-serif;
+    color: #000000;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+    cursor: pointer;
+}
+
+/*********** menu ***********/
+.menu {
+    text-align: left;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+}
+@media (min-width: 40em) {
+    .menu {
+        font-size: 20px;
+    }
+}
+
+.menu-title {
+    display: inline-block; 
+    padding: 10px;
+}
+
+.menu-option {
+    float: right;
+    display: inline-block;
+    padding: 10px;
+}
+
+.menu-option a {
+    border-style: solid;
+    border-width: 0 1px;
+    padding: 2px 5px;
+}
+
+/*********** footer ***********/
+.wrapper {
+    min-height: 100%;
+    margin-bottom: -42px;
+}
+
+.push {
+    height: 42px;
+}
+
+.footer {
+    height: 30px;
+    padding: 10px 0 0 10px;
+    border-style: solid;
+    border-width: 1px 0 0 0;
+}
+
+/*********** form ***********/
+.form-card {
+    font-size: 16px;
+    text-align: center;
+}
+@media (min-width: 40em) {
+    .form-card {
+        font-size: 20px;
+    }
+}
+
+.input {
+    font-size: 16px;
+	border-width: 1px;
+	border-style: solid;
+	outline: none;
+	padding: 3px;
+}
+@media (min-width: 40em) {
+    .input {
+        font-size: 20px;
+    }
+}
+
+.textarea {
+    width: 100%;
+    font-size: 16px;
+	background-color: #EEEEEE;
+	outline: none;
+    border-width: 0;
+	padding: 0;
+}
+@media (min-width: 40em) {
+    .textarea {
+        font-size: 20px;
+    }
+}
+
+.button {
+    background-color: #FFFFFF;
+    border-width: 1px;
+    border-color: #999999;
+    border-style: solid;
+    white-space: nowrap;
+    display: inline-block;
+    padding: 3px 10px;
+    cursor: pointer;
+    outline: none;
+}
+
+/*********** pages ***********/
+.pages {
+    table-layout: fixed;
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    border-style: solid;
+    border-width: 2px 0;
+    border-spacing: 0;
+}
+@media (min-width: 40em) {
+    .pages {
+        width: 50%;
+    }
+}
+
+.pages td {
+    border-style: solid;
+    border-width: 0 1px;
+    padding: 0;
+}
+
+.pages a {
+    display: block;
+}
+
+.inactive {
+    color: #AAAAAA;
+}
+
+.active {
+    font-weight: bold;
+}
+
+/*********** message ***********/
+.message {
+    word-wrap: break-word;
+    margin: 0 auto;
+    width: 100%;
+}
+@media (min-width: 40em) {
+    .message {
+        width: 70%;
+    }
+}
+
+.message-user {
+    font-weight: bold;
+    font-size: 16px;
+    padding: 0 5px;
+}
+@media (min-width: 40em) {
+    .message-user {
+        font-size: 20px;
+        padding: 0 10px;
+    }
+}
+
+.message-content {
+    padding: 0 5px;
+}
+@media (min-width: 40em) {
+    .message-content {
+        padding: 0 10px;
+    }
+}
+
+.message-time {
+    float: right;
+    color: #AAAAAA;
+    padding-right: 5px;
+}
+@media (min-width: 40em) {
+    .message-time {
+        padding-right: 10px;
+    }
+}
+
+/***********others***********/
+.error {
+    color: #BB0000;
+}
+
+.sl-hidden {
+    z-index: -1;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.sl {
+    font-size: 6px;
+    left: 100%;
+	position: relative;
+    animation: sl 5s linear;
+    -moz-animation: sl 5s linear;
+    -webkit-animation: sl 5s linear;
+    -o-animation: sl 5s linear;
+}
+@media (min-width: 40em) {
+    .sl {
+        font-size: 12px;
+        animation: sl 10s linear;
+        -moz-animation: sl 10s linear;
+        -webkit-animation: sl 10s linear;
+        -o-animation: sl 10s linear;
+    }
+}
+
+@keyframes sl
+{
+    from    {left: 100%;}
+	to	    {left: 0%;transform: translateX(-100%);}
+}
+
+@-moz-keyframes sl
+{
+    from    {left: 100%;}
+	to	    {left: 0%;transform: translateX(-100%);}
+}
+
+@-webkit-keyframes sl
+{
+    from    {left: 100%;}
+	to	    {left: 0%;transform: translateX(-100%);}
+}
+
+@-o-keyframes sl
+{
+    from    {left: 100%;}
+	to	    {left: 0%;transform: translateX(-100%);}
+}

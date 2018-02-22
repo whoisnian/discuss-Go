@@ -1,0 +1,18 @@
+{{template "header"}}
+<div class="menu">
+  <a class="menu-title" href="/">留言板</a>
+  <nav class="menu-option">
+    <a href="/">主页</a>
+    <a href="/signup/">注册</a>
+  </nav>
+</div>
+<br/>
+<form class="form-card" action="/login/" method="post">
+  {{if .Error}}<span class="error">{{.Error}}</span>{{end}}<br/><br/>
+  <input class="input" type="text" name="username" placeholder="昵称" value="{{.Username}}"><br/><br/>
+  <input class="input" type="password" name="password" placeholder="密码" value=""><br/><br/>
+  <label class="button">登录
+    <input style="display:none" type="submit" name="submit" value="登录">
+  </label>
+</form>
+{{template "footer"}}
